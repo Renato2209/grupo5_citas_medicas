@@ -28,7 +28,7 @@ dotnet run
 
 La API queda disponible en `http://localhost:5080` y la documentación interactiva (Swagger) en `http://localhost:5080/swagger`.
 
-El repositorio es privado. Para que el docente pueda revisar el código, el propietario debe invitar su cuenta de GitHub con permiso de lectura o cambiar la visibilidad del repositorio.
+El repositorio es privado y el docente cuenta con permiso de lectura para revisar el código.
 
 ## Modelo de datos
 
