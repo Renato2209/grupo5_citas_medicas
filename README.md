@@ -3,8 +3,8 @@
 API RESTful desarrollada con **C# y .NET 10** para registrar, consultar, actualizar, cancelar y eliminar las citas médicas de una clínica privada. Los datos se guardan **en memoria** (`List<T>`), sin base de datos: se pierden al detener la aplicación.
 
 > Curso: Desarrollo de Servicios Web — Zegel · Evaluación parcial
-> Integrantes: _(completar: nombre – rol)_
-> Repositorio: _(completar: enlace de GitHub)_
+> Integrantes: Arbaiza Lora Abel, Lozano Santiago Norma, Dominguez Pusari Renato, Luis Gabriel Valdez Antonio
+> Repositorio: https://github.com/Renato2209/grupo5_citas_medicas.git
 
 ## Requisitos
 
@@ -14,7 +14,7 @@ API RESTful desarrollada con **C# y .NET 10** para registrar, consultar, actuali
 ## Instalación y ejecución
 
 ```bash
-git clone <URL-DEL-REPOSITORIO>
+git clone https://github.com/Renato2209/grupo5_citas_medicas.git
 cd CitasMedicas.Api
 dotnet restore
 dotnet run
