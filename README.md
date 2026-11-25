@@ -162,7 +162,7 @@ Todas las excepciones se capturan en `GlobalExceptionHandler` y responden con un
 
 ### Capturas de pruebas
 
-_(Las capturas de Postman están en el informe técnico, sección 8.)_
+_(Las capturas de Postman están en el informe técnico, sección 6.)_
 
 ## Notas
 
