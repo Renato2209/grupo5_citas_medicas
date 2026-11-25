@@ -6,21 +6,35 @@ API RESTful desarrollada con **C# y .NET 10** para registrar, consultar, actuali
 > Integrantes: Arbaiza Lora Abel, Lozano Santiago Norma, Dominguez Pusari Renato, Luis Gabriel Valdez Antonio
 > Repositorio: https://github.com/Renato2209/grupo5_citas_medicas.git
 
+## Problema y objetivo
+
+La clínica necesita organizar las citas que actualmente se solicitan y coordinan de forma manual. Este proyecto implementa una API REST para centralizar el registro, consulta, actualización, cancelación y eliminación de citas, y para validar que los pacientes y médicos existan y que los horarios no se superpongan.
+
+La aplicación es académica y utiliza datos de prueba almacenados temporalmente en memoria. No utiliza una base de datos y no conserva los cambios al reiniciarse.
+
 ## Requisitos
 
-- [.NET SDK 10.0](https://dotnet.microsoft.com/download) (si solo tienes .NET 8 instalado, cambia `TargetFramework` a `net8.0` y la versión de Swashbuckle a `6.6.2` en el `.csproj`)
+- [.NET SDK 10.0](https://dotnet.microsoft.com/download)
 - [Postman](https://www.postman.com/downloads/) (para las pruebas)
 
 ## Instalación y ejecución
 
 ```bash
 git clone https://github.com/Renato2209/grupo5_citas_medicas.git
-cd CitasMedicas.Api
+cd grupo5_citas_medicas
 dotnet restore
 dotnet run
 ```
 
 La API queda disponible en `http://localhost:5080` y la documentación interactiva (Swagger) en `http://localhost:5080/swagger`.
+
+El repositorio es privado. Para que el docente pueda revisar el código, el propietario debe invitar su cuenta de GitHub con permiso de lectura o cambiar la visibilidad del repositorio.
+
+## Modelo de datos
+
+- **Paciente:** identificador, nombre, DNI y edad.
+- **Médico:** identificador, nombre, especialidad y número de colegiatura.
+- **Cita:** identificador, paciente, médico, fecha y hora, motivo y estado. Los estados disponibles son `Pendiente`, `Confirmada`, `Cancelada` y `Atendida`.
 
 ## Estructura del proyecto
 
@@ -41,7 +55,9 @@ CitasMedicas.Api/
 └── Program.cs     → Configuración y registro de dependencias
 ```
 
-Flujo: `Controller → ICitaService / ICatalogoService → List<T>`. Los controladores no contienen lógica de negocio.
+Los controladores reciben las solicitudes HTTP y delegan el trabajo a las interfaces de servicio. `CitaService` aplica las reglas de negocio y administra las citas; `CatalogoService` proporciona los médicos y pacientes de prueba. Los modelos representan los datos del dominio y los DTOs definen los formatos de entrada y salida de la API. `GlobalExceptionHandler` convierte las excepciones en respuestas de error uniformes.
+
+Flujo principal: `Controller → ICitaService / ICatalogoService → List<T>`. Los controladores no contienen lógica de negocio.
 
 ## Endpoints
 
